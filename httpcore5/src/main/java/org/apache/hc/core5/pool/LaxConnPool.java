@@ -486,8 +486,6 @@ public class LaxConnPool<T, C extends ModalCloseable> implements ManagedConnPool
                         final PoolEntry<T, C> newEntry = new PoolEntry<>(route, timeToLive);
                         addLeased(newEntry);
                         leaseRequest.completed(newEntry);
-                    } else {
-                        pending.addFirst(leaseRequest);
                     }
                     break;
                 }
